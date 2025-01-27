@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        :root {
+            --primary-color: #ffffff; 
+            --secondary-color: #1a1a1a; 
+            --accent-color: #000000; 
+            --background-color: #000000; 
+            --text-color: #ffffff; 
+            --main-bg-color: #ffffff; 
+            --main-text-color: #000000; 
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; 
+        }
+
+        body {
+            animation: fadeIn 2s ease-out;
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color); 
+            color: var(--accent-color); 
+            padding: 1.5rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid var(--accent-color); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        header nav ul li a {
+            color: var(--accent-color); 
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        header nav ul li a:hover {
+            color: var(--secondary-color); 
+        }
+
+        .logo {
+            font-style: italic;
+            font-size: 1.5rem;
+            padding-right: 2rem;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, var(--background-color), var(--secondary-color));
+            color: var(--text-color);
+            text-align: center;
+            padding: 2.5rem;
+            flex-direction: row;
+        }
+
+        .hero img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-left: 2rem;
+        }
+
+        .about-myself {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            max-width: 600px;
+        }
+
+        .about-myself h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        main {
+            background-color: var(--main-bg-color); 
+            color: var(--main-text-color); 
+            font-style: italic;
+        }
+
+        main .section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        main h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        .skills-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .skills-list span {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 12px; 
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .projects-list div {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 12px; 
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-list div p {
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero img {
+                margin-left: 0;
+                max-width: 200px;
+                margin-top: 1rem;
+            }
+
+            .about-myself {
+                text-align: center;
+                margin-top: 2rem;
+                font-size: 1.2rem;
+            }
+
+            .projects-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            header nav ul li a {
+                font-size: 1rem;
+            }
+
+            .skills-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="#about-myself">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about-myself" class="hero">
+        <div class="about-myself">
+            <h3 style="font-style: italic;color: #ffffff;">About Myself :</h3>
+            <p style="font-style: italic;">I am Parth Shukla, a student at SRM Institute of Science and Technology. I focus on developing skills, especially in areas crucial for my career, such as data structures and algorithms. I believe in learning from others, embracing challenges, and seeking new experiences that contribute to my growth. I’m determined to create a fulfilling life, whether in my career, personal development, or relationships. As I work towards mastering technical concepts, I aim to position myself for success in the tech industry, ensuring that my skills are constantly evolving and aligned with industry standards.</p>
+        </div>
+        <img src="WhatsApp Image 2025-01-26 at 10.10.01.jpeg" alt="My Photo">
+    </section>
+
+     <main>
+        <section id="skills" class="section">
+            <h3>Skills</h3>
+            <div class="skills-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Java</span>
+                <span>DSA</span>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h3>Education</h3>
+            <p>B.Tech in Computer Science Engineering</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h3>My Projects</h3>
+            <div class="projects-list">
+                <div>
+                    <a href="Pages/lms/index2.html" target="_blank">
+                    <h4>Library Management System</h4>
+                    <p>A project designed to manage a library’s books, users, and transactions efficiently.</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="Pages/to-do list/index1.html" target="_blank">
+                    <h4>To-Do List</h4>
+                    <p>A simple app to manage daily tasks and stay productive.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h3>Contact Me</h3>
+            <p>Contact Number: +916392665447</p>
+            <p>Email: psshukla2003@gmail.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Parth Shukla. All rights reserved.</p>
+    </footer>
+</body>
+</html>
